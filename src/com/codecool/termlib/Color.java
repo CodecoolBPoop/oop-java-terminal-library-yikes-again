@@ -1,7 +1,7 @@
 package com.codecool.termlib;
 
 public enum Color {
-    BLACK,
+  BLACK,
 	RED,
 	GREEN,
 	YELLOW,

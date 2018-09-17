@@ -32,7 +32,7 @@ public class Terminal {
      * (i.e.: underlined, dim, bright) to the terminal defaults.
      */
     public void resetStyle() {
-		
+
     }
 
     /**
@@ -41,8 +41,8 @@ public class Terminal {
      * Might reset cursor position.
      */
     public void clearScreen() {
-		moveTo(0,0);
-		command(CONTROL_CODE+CLEAR);
+		    moveTo(0,0);
+		    command(CONTROL_CODE+CLEAR);
     }
 
     /**
@@ -55,7 +55,7 @@ public class Terminal {
      * @param y Row number.
      */
     public void moveTo(Integer x, Integer y) {
-		command(CONTROL_CODE+x+';'+y+'f');
+		    command(CONTROL_CODE+x+';'+y+'f');
     }
 
     /**
@@ -122,12 +122,12 @@ public class Terminal {
      * @param commandString The unique part of a command sequence.
      */
     private void command(String commandString) {
-		System.out.print(commandString);
-		System.out.flush();
+		    System.out.print(commandString);
+		    System.out.flush();
     }
-	
-	public static void main(String[] arg) {
-         Terminal terminal = new Terminal();
-         terminal.clearScreen();
-     }
+
+	  public static void main(String[] arg) {
+        Terminal terminal = new Terminal();
+        terminal.clearScreen();
+    }
 }
