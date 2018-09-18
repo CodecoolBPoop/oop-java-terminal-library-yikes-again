@@ -66,7 +66,7 @@ public class Terminal {
      * @param color The color to set.
      */
     public void setColor(Color color) {
-        command(CONTROL_CODE+color.colorCode+STYLE);
+        command(CONTROL_CODE+'3'+color.colorCode+STYLE);
     }
 
     /**
@@ -77,6 +77,7 @@ public class Terminal {
      * @param color The background color to set.
      */
     public void setBgColor(Color color) {
+        command(CONTROL_CODE+'4'+color.colorCode+STYLE);
     }
 
     /**
@@ -132,6 +133,7 @@ public class Terminal {
         Terminal terminal = new Terminal();
         terminal.setUnderline();
         terminal.setColor(Color.CYAN);
+        terminal.setBgColor(Color.MAGENTA);
         System.out.println("hahaha");
         terminal.resetStyle();
     }
