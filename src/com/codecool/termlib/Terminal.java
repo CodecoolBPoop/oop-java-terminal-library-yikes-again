@@ -101,6 +101,7 @@ public class Terminal {
      * @param amount Step the cursor this many times.
      */
     public void moveCursor(Direction direction, Integer amount) {
+        command(CONTROL_CODE+amount+direction.cursorCode);
     }
 
     /**
@@ -114,6 +115,7 @@ public class Terminal {
      * position.
      */
     public void setChar(char c) {
+        command(CONTROL_CODE+'i'+c);
     }
 
     /**
@@ -133,8 +135,10 @@ public class Terminal {
         Terminal terminal = new Terminal();
         terminal.setUnderline();
         terminal.setColor(Color.CYAN);
-        terminal.setBgColor(Color.MAGENTA);
-        System.out.println("hahaha");
+        terminal.moveCursor(Direction.UP, 20);
+        terminal.moveCursor(Direction.FORWARD, 10);
+        terminal.setChar('q');
+        // System.out.println("hahaha");
         terminal.resetStyle();
     }
 }
