@@ -32,7 +32,7 @@ public class Terminal {
      * (i.e.: underlined, dim, bright) to the terminal defaults.
      */
     public void resetStyle() {
-
+        command(CONTROL_CODE+'0'+STYLE);
     }
 
     /**
@@ -66,6 +66,7 @@ public class Terminal {
      * @param color The color to set.
      */
     public void setColor(Color color) {
+        command(CONTROL_CODE+color.colorCode+STYLE);
     }
 
     /**
@@ -86,6 +87,7 @@ public class Terminal {
      * well.
      */
     public void setUnderline() {
+        command(CONTROL_CODE+'4'+STYLE);
     }
 
     /**
@@ -128,6 +130,9 @@ public class Terminal {
 
 	  public static void main(String[] arg) {
         Terminal terminal = new Terminal();
-        terminal.clearScreen();
+        terminal.setUnderline();
+        terminal.setColor(Color.CYAN);
+        System.out.println("hahaha");
+        terminal.resetStyle();
     }
 }
